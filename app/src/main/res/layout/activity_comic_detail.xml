@@ -77,7 +77,6 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnRead"
-                    style="@style/Widget.Material3.Button.Filled"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -86,7 +85,6 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnChapterList"
-                    style="@style/Widget.Material3.Button.Tonal"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -96,15 +94,14 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnComments"
-                style="@style/Widget.Material3.Button.Outlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="@string/action_view_comments" />
+                android:text="@string/action_view_comments"
+                app:strokeWidth="1dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnManageChapters"
-                style="@style/Widget.Material3.Button.Tonal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

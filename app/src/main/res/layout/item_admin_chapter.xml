@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
@@ -45,7 +46,6 @@
 
             <ImageButton
                 android:id="@+id/btnEditChapter"
-                style="@style/Widget.Material3.ImageButton.Filled.Tonal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="?attr/colorSecondaryContainer"
@@ -55,7 +55,6 @@
 
             <ImageButton
                 android:id="@+id/btnDeleteChapter"
-                style="@style/Widget.Material3.ImageButton.Filled"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
