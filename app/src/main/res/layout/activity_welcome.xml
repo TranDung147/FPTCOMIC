@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C">
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:scaleType="centerInside"
+        android:background="@drawable/circle_background"
+        android:layout_marginBottom="30dp"
+        android:clipToOutline="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FPT Comic"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#00D4FF"
+        android:layout_gravity="center"
+        android:layout_marginTop="180dp" />
+</FrameLayout>
