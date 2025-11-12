@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.fptcomicapp.R;
 import com.example.fptcomicapp.adapter.RankingAdapter;
 import com.example.fptcomicapp.model.Comic;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -79,7 +80,7 @@ public class RankingFragment extends Fragment {
         db.collection("comics").get()
                 .addOnSuccessListener(querySnapshot -> {
                     comicList.clear();
-                    for (var doc : querySnapshot.getDocuments()) {
+                    for (DocumentSnapshot doc : querySnapshot.getDocuments()) {
                         Comic comic = doc.toObject(Comic.class);
                         if (comic != null) {
                             comic.setId(doc.getId());

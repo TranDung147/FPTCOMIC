@@ -1,5 +1,6 @@
 package com.example.fptcomicapp.adapter;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
+import com.example.fptcomicapp.ComicDetailActivity;
 import com.example.fptcomicapp.R;
 import com.example.fptcomicapp.model.Comic;
 import java.util.List;
@@ -53,6 +55,13 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ViewHolder> 
         if (holder.tvChapter != null) {
             holder.tvChapter.setText(comic.getChaptersCount() + " chapters");
         }
+
+        holder.itemView.setOnClickListener(v -> {
+            if (comic.getId() == null) return;
+            Intent intent = new Intent(holder.itemView.getContext(), ComicDetailActivity.class);
+            intent.putExtra(ComicDetailActivity.EXTRA_COMIC_ID, comic.getId());
+            holder.itemView.getContext().startActivity(intent);
+        });
     }
 
     @Override

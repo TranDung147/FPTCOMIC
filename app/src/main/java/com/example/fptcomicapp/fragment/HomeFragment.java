@@ -14,6 +14,7 @@ import com.example.fptcomicapp.R;
 import com.example.fptcomicapp.adapter.ComicAdapter;
 import com.example.fptcomicapp.model.Comic;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,9 +58,12 @@ public class HomeFragment extends Fragment {
         db.collection("comics").limit(10).get()
                 .addOnSuccessListener(snapshot -> {
                     horizontalList.clear();
-                    for (var doc : snapshot) {
+                    for (QueryDocumentSnapshot doc : snapshot) {
                         Comic c = doc.toObject(Comic.class);
-                        if (c != null) horizontalList.add(c);
+                        if (c != null) {
+                            c.setId(doc.getId());
+                            horizontalList.add(c);
+                        }
                     }
                     horizontalAdapter.notifyDataSetChanged();
                 });
@@ -67,9 +71,12 @@ public class HomeFragment extends Fragment {
         db.collection("comics").get()
                 .addOnSuccessListener(snapshot -> {
                     verticalList.clear();
-                    for (var doc : snapshot) {
+                    for (QueryDocumentSnapshot doc : snapshot) {
                         Comic c = doc.toObject(Comic.class);
-                        if (c != null) verticalList.add(c);
+                        if (c != null) {
+                            c.setId(doc.getId());
+                            verticalList.add(c);
+                        }
                     }
                     verticalAdapter.notifyDataSetChanged();
                 });

@@ -1,5 +1,6 @@
 package com.example.fptcomicapp.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.fptcomicapp.ComicDetailActivity;
 import com.example.fptcomicapp.R;
 import com.example.fptcomicapp.model.Comic;
 
@@ -45,6 +47,13 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.RankingV
         holder.tvViews.setText("Views: " + comic.getViews());
         holder.tvDescription.setText(comic.getDescription() != null ? comic.getDescription() : "No description");
         holder.tvRank.setText((position + 1) + "");
+
+        holder.itemView.setOnClickListener(v -> {
+            if (comic.getId() == null) return;
+            Intent intent = new Intent(holder.itemView.getContext(), ComicDetailActivity.class);
+            intent.putExtra(ComicDetailActivity.EXTRA_COMIC_ID, comic.getId());
+            holder.itemView.getContext().startActivity(intent);
+        });
     }
 
     @Override

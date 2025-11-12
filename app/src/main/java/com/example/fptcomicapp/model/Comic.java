@@ -1,21 +1,23 @@
 package com.example.fptcomicapp.model;
 
 public class Comic {
-    private String title,id;
-    private String coverUrl,description;
-    private long likes,chaptersCount;
+    private String title, id;
+    private String coverUrl, description;
+    private String author;
+    private long likes, chaptersCount;
     private long views;
 
     public Comic() {} // required for Firestore
 
-    public Comic(String title, String coverUrl,String id,long likes,long views,String description,long chaptersCount) {
+    public Comic(String title, String coverUrl, String id, long likes, long views, String description, long chaptersCount, String author) {
         this.title = title;
         this.coverUrl = coverUrl;
-        this.chaptersCount=chaptersCount;
+        this.chaptersCount = chaptersCount;
         this.likes = likes;
         this.views = views;
-        this.id=id;
-        this.description=description;
+        this.id = id;
+        this.description = description;
+        this.author = author;
     }
 
     public long getChaptersCount() {
@@ -60,5 +62,18 @@ public class Comic {
 
     public String getTitle() { return title; }
     public String getCoverUrl() { return coverUrl; }
+    public String getAuthor() { return author; }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
 }
 

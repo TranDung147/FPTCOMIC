@@ -12,10 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FPTCOMICAPP">
+        <activity android:name=".CommentActivity" />
+        <activity android:name=".ComicReaderActivity" />
+        <activity android:name=".ChapterListActivity" />
+        <activity android:name=".ComicDetailActivity" />
+        <activity android:name=".AdminChapterActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RankingActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
