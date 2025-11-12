@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "884323673121",
+    "firebase_url": "https://fptcomic-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "fptcomic",
+    "storage_bucket": "fptcomic.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884323673121:android:687e46c5cbb96b04df6f60",
+        "android_client_info": {
+          "package_name": "com.example.fptcomicapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9fEbg8tZsXbIjS3BfPLoC8kqTJjnFNiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
