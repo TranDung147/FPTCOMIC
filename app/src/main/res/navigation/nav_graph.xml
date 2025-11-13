@@ -13,4 +13,12 @@
         android:id="@+id/rankingFragment"
         android:name="com.example.fptcomicapp.fragment.RankingFragment"
         android:label="Ranking" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.fptcomicapp.fragment.ProfileFragment"
+        android:label="Profile" />
+    <fragment
+        android:id="@+id/adminDashboardFragment"
+        android:name="com.example.fptcomicapp.fragment.AdminDashboardFragment"
+        android:label="Admin" />
 </navigation>

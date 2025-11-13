@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.example.fptcomicapp.model.Chapter;
 import com.example.fptcomicapp.model.Comic;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.example.fptcomicapp.util.AuthUtil;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -78,7 +79,10 @@ public class ComicDetailActivity extends AppCompatActivity {
         btnManage = findViewById(R.id.btnManageChapters);
         progressBar = findViewById(R.id.progressComicDetail);
 
-        btnManage.setVisibility(isAdminUser() ? View.VISIBLE : View.GONE);
+        // Check admin role and show/hide manage button
+        AuthUtil.checkAdminStatus(isAdmin -> {
+            btnManage.setVisibility(isAdmin ? View.VISIBLE : View.GONE);
+        });
 
         toolbar = findViewById(R.id.toolbarComicDetail);
         if (toolbar != null) {
@@ -175,12 +179,6 @@ public class ComicDetailActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private boolean isAdminUser() {
-        if (FirebaseAuth.getInstance().getCurrentUser() == null) return false;
-        String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        if (email == null) return false;
-        return email.endsWith("@admin.com") || email.equalsIgnoreCase("admin@fptcomic.com");
-    }
 }
 
 

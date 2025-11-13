@@ -7,4 +7,12 @@
         android:id="@+id/rankingFragment"
         android:icon="@drawable/ranking"
         android:title="Ranking" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/user"
+        android:title="Profile" />
+    <item
+        android:id="@+id/adminDashboardFragment"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Admin" />
 </menu>
