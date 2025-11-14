@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.fptcomicapp.constant.Role;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -126,6 +128,8 @@ public class RegisterActivity extends AppCompatActivity {
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("displayName", displayName);
         userMap.put("email", email);
+        userMap.put("role", Role.USER);
+
 
         db.collection("users").document(uid)
                 .set(userMap)
