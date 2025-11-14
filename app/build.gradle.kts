@@ -52,6 +52,9 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("androidx.cardview:cardview:1.0.0")
+    
+    // Web scraping với Jsoup
+    implementation("org.jsoup:jsoup:1.17.2")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

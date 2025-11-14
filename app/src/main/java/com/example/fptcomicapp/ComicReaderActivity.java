@@ -62,7 +62,8 @@ public class ComicReaderActivity extends AppCompatActivity {
         }
 
         db = FirebaseFirestore.getInstance();
-        storage = FirebaseStorage.getInstance();
+        // Chỉ định bucket name rõ ràng từ google-services.json
+        storage = FirebaseStorage.getInstance("gs://fptcomic.firebasestorage.app");
 
         initViews();
         setupViewPager();
